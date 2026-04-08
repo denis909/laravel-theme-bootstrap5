@@ -8,4 +8,5 @@ Blade::anonymousComponentPath(base_path('vendor') . '/denis909/laravel-theme-boo
 ```
 
 License: MIT
+
 Author: denis909@mail.ru

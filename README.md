@@ -3,8 +3,7 @@
 ```
 use Illuminate\Support\Facades\Blade;        
 
-Blade::anonymousComponentPath(base_path('vendor') . '/denis909/laravel-theme-bootstrap5/components', 'admin');
-Blade::anonymousComponentPath(base_path('vendor') . '/denis909/laravel-theme-bootstrap5/components', 'site');
+Blade::anonymousComponentPath(base_path('vendor') . '/denis909/laravel-theme-bootstrap5/components');
 ```
 
 License: MIT

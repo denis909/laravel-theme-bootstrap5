@@ -18,6 +18,14 @@ if ($error)
         <option>{{ $prompt }}</option>
     @endif
     @foreach($options as $key => $label)
-        <option value="{{ $key }}" {{ ($value == $key) ? ' selected' : '' }}>{{ $label }}</option>
+        @php
+            $selected = ($key == $value);
+
+            if (is_array($value))
+            {
+                $selected = (array_search($key, $value) !== false);
+            }
+        @endphp
+        <option value="{{ $key }}" @selected($selected)>{{ $label }}</option>
     @endforeach
 </select>  

@@ -1,11 +1,21 @@
 @use('Illuminate\View\ComponentAttributeBag')
+
 @props([
     'label' => null,
-    'labelAttributes' => new ComponentAttributeBag($labelAttributes ?? []),
+    'labelAttributes' => [],
     'error' => null,
-    'errorAttributes' => new ComponentAttributeBag($errorAttributes ?? []),
-    'labelFor' => null,
+    'errorAttributes' => [],
+    'labelFor' => null
 ])
+
+@php
+
+$labelAttributes = new ComponentAttributeBag($labelAttributes);
+
+$errorAttributes = new ComponentAttributeBag($errorAttributes);
+
+@endphp
+
 @if($label)
     <label {!! $labelAttributes->merge(['class' => 'form-label', 'for' => $labelFor]) !!}>{!! $label !!}</label>
 @endif

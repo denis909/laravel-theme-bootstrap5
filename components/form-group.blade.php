@@ -9,7 +9,7 @@
 @if($label)
     <label {!! $labelAttributes->merge(['class' => 'form-label', 'for' => $labelFor]) !!}>{!! $label !!}</label>
 @endif
-<div class="input-group mb-3">
+<div {{ $attributes->merge(['class' => 'mb-3']) }}>
     {{ $slot }}
     @if($error)
         <span {{ $errorAttributes->merge(['class' => 'invalid-feedback', 'role' => 'alert']) }}>

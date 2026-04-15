@@ -7,7 +7,7 @@
 @aware(['error' => null])
 <div class="form-check">
     @if($uncheckValue !== null)
-        <input type="hidden" name="{{ $attributes->name }}" value="{{ $uncheckValue }}" />
+        <input type="hidden" name="{{ $attributes->get('name') }}" value="{{ $uncheckValue }}" />
     @endif
     <input {{ $attributes->merge([
         'class' => $error ? 'is-invalid form-check-input' : 'form-check-input',

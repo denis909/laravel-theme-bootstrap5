@@ -15,7 +15,7 @@ if ($error)
 @endphp
 <select name="{{ $name }}" {{ $attributes->merge(['class' => 'form-select']) }}>
     @if($prompt)
-        <option>{{ $prompt }}</option>
+        <option value="">{{ $prompt }}</option>
     @endif
     @foreach($options as $key => $label)
         @php

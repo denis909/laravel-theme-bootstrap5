@@ -1,6 +1,6 @@
 @props([
     'name' => null,
-    'prompt' => null,
+    'placeholder' => null,
     'options' => [],
     'value' => null
 ])
@@ -14,8 +14,8 @@ if ($error)
 }
 @endphp
 <select name="{{ $name }}" {{ $attributes->merge(['class' => 'form-select']) }}>
-    @if($prompt)
-        <option>{{ $prompt }}</option>
+    @if($placeholder)
+        <option>{{ $placeholder }}</option>
     @endif
     @foreach($options as $key => $label)
         @php

@@ -1,1 +1,4 @@
-<div class="alert alert-{{ $type }}">{{ $slot }}</div>
+@props([
+    'message' => null
+])
+<div class="alert alert-{{ $type }}">{{ $message ?? $slot }}</div>

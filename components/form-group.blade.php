@@ -16,10 +16,10 @@ $errorAttributes = new ComponentAttributeBag($errorAttributes);
 
 @endphp
 
-@if($label)
-    <label {!! $labelAttributes->merge(['class' => 'form-label', 'for' => $labelFor]) !!}>{!! $label !!}</label>
-@endif
 <div {{ $attributes->merge(['class' => 'mb-3']) }}>
+    @if($label)
+        <label {!! $labelAttributes->merge(['class' => 'form-label', 'for' => $labelFor]) !!}>{!! $label !!}</label>
+    @endif
     {{ $slot }}
     @if($error)
         <span {{ $errorAttributes->merge(['class' => 'invalid-feedback', 'role' => 'alert']) }}>

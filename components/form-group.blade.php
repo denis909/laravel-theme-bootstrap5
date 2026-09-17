@@ -1,15 +1,13 @@
 @use('Illuminate\View\ComponentAttributeBag')
-
 @props([
     'label' => null,
     'labelAttributes' => [],
     'error' => null,
     'errorAttributes' => [],
-    'labelFor' => null
+    'labelFor' => null,
+    'required' => false
 ])
-
 @php
-
 $labelAttributes = new ComponentAttributeBag($labelAttributes);
 
 $errorAttributes = new ComponentAttributeBag($errorAttributes);
@@ -18,7 +16,7 @@ $errorAttributes = new ComponentAttributeBag($errorAttributes);
 
 <div {{ $attributes->merge(['class' => 'mb-3']) }}>
     @if($label)
-        <label {!! $labelAttributes->merge(['class' => 'form-label', 'for' => $labelFor]) !!}>{!! $label !!}</label>
+        <label {!! $labelAttributes->merge(['class' => 'form-label', 'for' => $labelFor]) !!}>{!! $label !!} @if($required) <span class="text-danger" title="{{ __('Required') }}">*</span> @endif</label>
     @endif
     {{ $slot }}
     @if($error)

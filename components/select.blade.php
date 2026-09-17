@@ -6,8 +6,7 @@
 ])
 @aware(['error' => null])
 @php
-if ($error)
-{
+if ($error) {
     $attributes = $attributes->merge([
         'class' => 'is-invalid'
     ]);
@@ -15,7 +14,7 @@ if ($error)
 @endphp
 <select name="{{ $name }}" {{ $attributes->merge(['class' => 'form-select']) }}>
     @if($placeholder)
-        <option>{{ $placeholder }}</option>
+        <option value="">{{ $placeholder }}</option>
     @endif
     @foreach($options as $key => $label)
         @php
